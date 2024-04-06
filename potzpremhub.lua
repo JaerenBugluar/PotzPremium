@@ -12,6 +12,14 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 
+local Tabs = {
+    Main = Window:AddTab({ Title = "Main", Icon = "" }),
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+do
+
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
