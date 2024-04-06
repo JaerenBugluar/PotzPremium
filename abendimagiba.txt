@@ -1,6 +1,5 @@
 ---Fluent
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
-local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 --Windows
@@ -14,13 +13,6 @@ local Window = Fluent:CreateWindow({
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
 
---Notify
-Fluent:Notify({
-    Title = "PotzHub Loaded.",
-    Content = "Welcome! "..game.Players.LocalPlayer.Name.." Enjoy!",
-    SubContent = "Whitelisted User", -- Optional
-    Duration = 5 -- Set to nil to make the notification not disappear
-})
 
 --Tabs
 local Tabs = {
@@ -138,14 +130,15 @@ then
 if game:IsLoaded() then
 
 --fluent addon
-SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
-SaveManager:IgnoreThemeSettings()
-SaveManager:SetIgnoreIndexes({})
-InterfaceManager:SetFolder("PotzScriptHub")
-SaveManager:SetFolder("PotzScriptHub/specific-game")
+InterfaceManager:SetFolder("PotzHubV1.5")
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
-SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
-SaveManager:LoadAutoloadConfig()
+--Notify
+Fluent:Notify({
+    Title = "PotzHub Loaded.",
+    Content = "Welcome! "..game.Players.LocalPlayer.Name.." Enjoy!",
+    SubContent = "Whitelisted User", -- Optional
+    Duration = 5 -- Set to nil to make the notification not disappear
+})
