@@ -14,11 +14,16 @@ local Window = Fluent:CreateWindow({
 
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
+
 SaveManager:IgnoreThemeSettings()
+
 SaveManager:SetIgnoreIndexes({})
+
 InterfaceManager:SetFolder("PotzHubV1.5")
 SaveManager:SetFolder("PotzHubV1.5/BloxFruits")
+
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+
 SaveManager:BuildConfigSection(Tabs.Settings)
 
 Window:SelectTab(1)
