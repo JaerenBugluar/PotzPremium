@@ -136,3 +136,16 @@ if
 game:GetService("Players").LocalPlayer.Character:FindFirstChild("Energy")
 then
 if game:IsLoaded() then
+
+--fluent addon
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+SaveManager:IgnoreThemeSettings()
+SaveManager:SetIgnoreIndexes({})
+InterfaceManager:SetFolder("PotzScriptHub")
+SaveManager:SetFolder("PotzScriptHub/specific-game")
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+Window:SelectTab(1)
+
+SaveManager:LoadAutoloadConfig()
